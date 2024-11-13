@@ -1,16 +1,18 @@
-# business_card
+# Flutter Business Card PWA
 
-A new Flutter project.
+A digital business card built with Flutter Web and PWA capabilities.
 
-## Getting Started
+## Features
+- Responsive design
+- Interactive elements
+- Installable as PWA
+- Offline capability
 
-This project is a starting point for a Flutter application.
+## Setup
+1. Clone the repository
+2. Run `flutter pub get`
+3. Run `flutter run -d chrome`
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build for Production
+```bash
+flutter build web
