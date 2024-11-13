@@ -1,5 +1,5 @@
 {
-    "name": "Business Card PWA",
+    "name": "Business Card",
     "short_name": "BCard",
     "start_url": ".",
     "display": "standalone",
