@@ -5,7 +5,7 @@ A digital business card built with Flutter Web and PWA capabilities.
 ## Features
 - Responsive design
 - Interactive elements
-- Installable as PWA
+- PWA support
 - Offline capability
 
 ## Setup
@@ -13,6 +13,7 @@ A digital business card built with Flutter Web and PWA capabilities.
 2. Run `flutter pub get`
 3. Run `flutter run -d chrome`
 
-## Build for Production
+## Build
 ```bash
 flutter build web
+python3 -m http.server 8000 --directory build/web
