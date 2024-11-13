@@ -42,15 +42,12 @@ class BusinessCard extends StatelessWidget {
                   height: 120,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.teal, // Fallback color
+                    color: Colors.teal,
                     image: const DecorationImage(
-                      image: NetworkImage(
-                        'YOUR_IMAGE_URL_HERE', // Replace with actual URL
-                      ),
+                      image: NetworkImage('YOUR_IMAGE_URL_HERE'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  // Fallback icon if image fails
                   child: const Icon(
                     Icons.person,
                     size: 60,
