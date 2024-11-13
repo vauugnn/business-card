@@ -34,27 +34,38 @@ class BusinessCard extends StatelessWidget {
           child: Container(
             width: 400,
             padding: const EdgeInsets.all(20),
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundColor: Colors.teal,
-                  child: Icon(
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.teal, // Fallback color
+                    image: const DecorationImage(
+                      image: NetworkImage(
+                        'YOUR_IMAGE_URL_HERE', // Replace with actual URL
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  // Fallback icon if image fails
+                  child: const Icon(
                     Icons.person,
-                    size: 50,
+                    size: 60,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   'Juan dela Cruz',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   'Flutter Developer',
                   style: TextStyle(
                     fontSize: 18,
