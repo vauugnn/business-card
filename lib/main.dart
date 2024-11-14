@@ -48,6 +48,16 @@ class BusinessCard extends StatelessWidget {
   }
 }
 
+  void _launchGithub() async {
+  final Uri githubLaunchUri = Uri(
+    scheme: 'web',
+    path: 'github.com/vauugnn',
+  );
+  if (await canLaunchUrl(githubLaunchUri)) {
+    await launchUrl(githubLaunchUri);
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -97,6 +107,12 @@ class BusinessCard extends StatelessWidget {
                     ),
                   ),
                   const Divider(height: 32, thickness: 1),
+                  ListTile(
+                    leading: const Icon(Icons.code, color: Colors.blue),
+                    title: const Text('github.com/vauugnn'),
+                    onTap: _launchGithub,
+                    hoverColor: Colors.blue.withOpacity(0.1),
+                  ),
                   ListTile(
                     leading: const Icon(Icons.email, color: Colors.blue),
                     title: const Text('vaughnrochederoda@gmail.com'),
