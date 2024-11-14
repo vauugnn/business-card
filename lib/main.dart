@@ -38,25 +38,45 @@ class BusinessCard extends StatelessWidget {
     }
   }
 
-  void _launchPhone() async {
-  final Uri phoneLaunchUri = Uri(
-    scheme: 'tel',
-    path: '+639912170142',
-  );
-  if (await canLaunchUrl(phoneLaunchUri)) {
-    await launchUrl(phoneLaunchUri);
-  }
-}
-
   void _launchGithub() async {
   final Uri githubLaunchUri = Uri(
-    scheme: 'web',
+    scheme: 'https',
     path: 'github.com/vauugnn',
   );
   if (await canLaunchUrl(githubLaunchUri)) {
     await launchUrl(githubLaunchUri);
   }
 }
+
+  void _launchLinkedIn() async {
+    final Uri uri = Uri(
+      scheme: 'https',
+      path: 'https://www.linkedin.com/in/vaughn-roche-de-roda-92a4752ab/',
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
+
+  void _launchFacebook() async {
+    final Uri uri = Uri(
+      scheme: 'https',
+      path: 'https://web.facebook.com/vaughnderoda',
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
+
+  void _launchInstagram() async {
+    final Uri uri = Uri(
+      scheme: 'https',
+      path: 'yourprofile',
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,21 +128,33 @@ class BusinessCard extends StatelessWidget {
                   ),
                   const Divider(height: 32, thickness: 1),
                   ListTile(
-                    leading: const Icon(Icons.code, color: Colors.blue),
-                    title: const Text('github.com/vauugnn'),
-                    onTap: _launchGithub,
-                    hoverColor: Colors.blue.withOpacity(0.1),
-                  ),
-                  ListTile(
                     leading: const Icon(Icons.email, color: Colors.blue),
                     title: const Text('vaughnrochederoda@gmail.com'),
                     onTap: _launchEmail,
                     hoverColor: Colors.blue.withOpacity(0.1),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.phone, color: Colors.blue),
-                    title: const Text('+63 991 217 0142'),
-                    onTap: _launchPhone,
+                    leading: const Icon(Icons.code, color: Colors.blue),
+                    title: const Text('Github'),
+                    onTap: _launchGithub,
+                    hoverColor: Colors.blue.withOpacity(0.1),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.person, color: Colors.blue),  // Better LinkedIn icon
+                    title: const Text('LinkedIn'),
+                    onTap: _launchLinkedIn,
+                    hoverColor: Colors.blue.withOpacity(0.1),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.facebook, color: Colors.blue),
+                    title: const Text('Facebook'),
+                    onTap: _launchFacebook,
+                    hoverColor: Colors.blue.withOpacity(0.1),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.camera_alt, color: Colors.blue),  // Better Instagram icon
+                    title: const Text('Instagram'),
+                    onTap: _launchInstagram,
                     hoverColor: Colors.blue.withOpacity(0.1),
                   ),
                   const ListTile(
