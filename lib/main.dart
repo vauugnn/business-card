@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
+          seedColor: Colors.blue,
           brightness: Brightness.light,
         ),
         useMaterial3: true,
@@ -31,7 +31,7 @@ class BusinessCard extends StatelessWidget {
   void _launchEmail() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'juan@example.com',
+      path: 'vaughnrochederoda@gmail.com',
     );
     if (await canLaunchUrl(emailLaunchUri)) {
       await launchUrl(emailLaunchUri);
@@ -39,14 +39,14 @@ class BusinessCard extends StatelessWidget {
   }
 
   void _launchPhone() async {
-    final Uri phoneLaunchUri = Uri(
-      scheme: 'tel',
-      path: '+639171234567',
-    );
-    if (await canLaunchUrl(phoneLaunchUri)) {
-      await launchUrl(phoneLaunchUri);
-    }
+  final Uri phoneLaunchUri = Uri(
+    scheme: 'tel',
+    path: '+639912170142',
+  );
+  if (await canLaunchUrl(phoneLaunchUri)) {
+    await launchUrl(phoneLaunchUri);
   }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -58,72 +58,68 @@ class BusinessCard extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: MouseRegion(
-            child: Card(
-              elevation: 8,
-              child: Container(
-                width: screenWidth > 600 ? 600 : screenWidth * 0.9,
-                padding: EdgeInsets.all(screenWidth > 600 ? 24 : 16),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      width: screenWidth > 600 ? 150 : 120,
-                      height: screenWidth > 600 ? 150 : 120,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.teal,
-                        image: const DecorationImage(
-                          image: NetworkImage('YOUR_IMAGE_URL_HERE'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: const Icon(
-                        Icons.person,
-                        size: 60,
-                        color: Colors.white,
+          child: Card(
+            elevation: 8,
+            child: Container(
+              width: screenWidth > 600 ? 600 : screenWidth * 0.9,
+              padding: EdgeInsets.all(screenWidth > 600 ? 24 : 16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: screenWidth > 600 ? 150 : 120,
+                    height: screenWidth > 600 ? 150 : 120,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.blue,
+                      image: const DecorationImage(
+                        image: NetworkImage('https://i.imgur.com/5nUVHT7.png'),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(height: 24),
-                    Text(
-                      'Juan dela Cruz',
-                      style: TextStyle(
-                        fontSize: screenWidth > 600 ? 28 : 24,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
-                      ),
+                  ),
+                  const SizedBox(height: 24),
+                  Text(
+                    'Vaughn Roche de Roda',
+                    style: TextStyle(
+                      fontSize: screenWidth > 600 ? 28 : 24,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
                     ),
-                    Text(
-                      'Flutter Developer',
-                      style: TextStyle(
-                        fontSize: screenWidth > 600 ? 20 : 16,
-                        color: Colors.teal,
-                        letterSpacing: 1.1,
-                      ),
+                  ),
+                  Text(
+                    'Software Developer | Tech Volunteer | Community Builder',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: screenWidth > 600 ? 20 : 16,
+                      color: Colors.blue,
+                      letterSpacing: 1.1,
                     ),
-                    const Divider(height: 32, thickness: 1),
-                    ListTile(
-                      leading: const Icon(Icons.email, color: Colors.teal),
-                      title: const Text('juan@example.com'),
-                      onTap: _launchEmail,
-                      hoverColor: Colors.teal.withOpacity(0.1),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.phone, color: Colors.teal),
-                      title: const Text('+63 917 123 4567'),
-                      onTap: _launchPhone,
-                      hoverColor: Colors.teal.withOpacity(0.1),
-                    ),
-                    const ListTile(
-                      leading: Icon(Icons.location_on, color: Colors.teal),
-                      title: Text('Manila, Philippines'),
-                    ),
-                  ],
-                ),
+                  ),
+                  const Divider(height: 32, thickness: 1),
+                  ListTile(
+                    leading: const Icon(Icons.email, color: Colors.blue),
+                    title: const Text('vaughnrochederoda@gmail.com'),
+                    onTap: _launchEmail,
+                    hoverColor: Colors.blue.withOpacity(0.1),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.phone, color: Colors.blue),
+                    title: const Text('+63 991 217 0142'),
+                    onTap: _launchPhone,
+                    hoverColor: Colors.blue.withOpacity(0.1),
+                  ),
+                  const ListTile(
+                    leading: Icon(Icons.location_on, color: Colors.blue),
+                    title: Text('Davao City, Philippines'),
+                  ),
+                ],
               ),
             ),
           ),
         ),
       ),
+     ),
     );
   }
 }

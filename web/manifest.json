@@ -5,10 +5,10 @@
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#009688",
-    "description": "A Flutter Business Card PWA",
+    "description": "A business card made with Flutter",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
-    "icons": [
+    "icons":[
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
