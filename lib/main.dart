@@ -39,39 +39,43 @@ class BusinessCard extends StatelessWidget {
   }
 
   void _launchGithub() async {
-  final Uri githubLaunchUri = Uri(
-    scheme: 'https',
-    path: 'github.com/vauugnn',
-  );
-  if (await canLaunchUrl(githubLaunchUri)) {
-    await launchUrl(githubLaunchUri);
+    final Uri githubLaunchUri = Uri(
+      scheme: 'https',
+      host: 'github.com',
+      pathSegments: ['vauugnn'],
+    );
+    if (await canLaunchUrl(githubLaunchUri)) {
+      await launchUrl(githubLaunchUri);
+    }
   }
-}
-
+  
   void _launchLinkedIn() async {
     final Uri uri = Uri(
       scheme: 'https',
-      path: 'https://www.linkedin.com/in/vaughn-roche-de-roda-92a4752ab/',
+      host: 'linkedin.com',
+      pathSegments: ['in', 'vaughn-roche-de-roda-92a4752ab'],
     );
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     }
   }
-
+  
   void _launchFacebook() async {
     final Uri uri = Uri(
       scheme: 'https',
-      path: 'https://web.facebook.com/vaughnderoda',
+      host: 'facebook.com',
+      pathSegments: ['vaughnderoda'],
     );
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     }
   }
-
+  
   void _launchInstagram() async {
     final Uri uri = Uri(
       scheme: 'https',
-      path: 'yourprofile',
+      host: 'instagram.com',
+      pathSegments: ['vaugn.py'],
     );
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
