@@ -64,7 +64,10 @@ class BusinessCard extends StatelessWidget {
     final Uri uri = Uri(
       scheme: 'https',
       host: 'facebook.com',
-      pathSegments: ['vaughnderoda'],
+      path: 'profile.php',
+      queryParameters: {
+        'id': '61566488972988'
+      },
     );
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
@@ -165,6 +168,20 @@ class BusinessCard extends StatelessWidget {
                     leading: Icon(Icons.location_on, color: Colors.blue),
                     title: Text('Davao City, Philippines'),
                   ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Column(
+                    children: [ 
+                      const Text(
+                        'This website was made with Flutter and PWA!',
+                        style: TextStyle(
+                          fontSize: 14, 
+                          color: Colors.blue
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 ],
               ),
             ),
